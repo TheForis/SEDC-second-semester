@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj": {}
+    "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\TheForis\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj": {
+    "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\TheForis\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj",
+        "projectUniqueName": "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\TheForis\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj",
         "projectName": "1stClassHomework-Person",
-        "projectPath": "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj",
+        "projectPath": "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\TheForis\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\1stClassHomework-Person.csproj",
         "packagesPath": "C:\\Users\\Boris Visual Code\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\obj\\",
+        "outputPath": "C:\\Users\\Boris Visual Code\\Desktop\\Repositories\\TheForis\\SEDC-second-semester\\C#-Basic\\C#-Basic-Homeworks\\1stClassHomework-Person\\1stClassHomework-Person\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
