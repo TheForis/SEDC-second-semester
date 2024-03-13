@@ -8,23 +8,28 @@ namespace Task1
         public string Breed { get; set; }
         public Color Color { get; set; }
 
-        public Dog(string name, string breed, Color color) 
+        public Dog(string name, string breed, Color color)
         {
             Name = name;
             Breed = breed;
             Color = color;
         }
+        public string DogInfo {get
+            {
+                return $"The dog of breed: {Breed}, name: {Name} and {Color}";
+            }
+    }
         public string Eat()
         {
-            return $"The dog of breed: {Breed}, name: {Name} and {Color} is now eating!";
+            return $"{DogInfo} is now eating!";
         }
         public string Play() 
         {
-            return $"The dog of breed: {Breed}, name: {Name} and {Color} is now playing!";
+            return $"{DogInfo} is now playing!";
         }
         public string ChaseTail()
         {
-            return $"The dog of breed: {Breed}, name: {Name} and {Color} is now chasing it's tail!";
+            return $"{DogInfo} is now chasing it's tail!";
         }
         
     }
