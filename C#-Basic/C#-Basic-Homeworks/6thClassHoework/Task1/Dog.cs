@@ -8,9 +8,6 @@ namespace Task1
         public string Breed { get; set; }
         public Color Color { get; set; }
 
-        public Dog() 
-        {
-        }
         public Dog(string name, string breed, Color color) 
         {
             Name = name;
