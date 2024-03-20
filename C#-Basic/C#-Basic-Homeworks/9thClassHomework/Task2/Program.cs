@@ -107,30 +107,46 @@ namespace Task2
 
             #endregion
 
-            /*#region CLASS DEMO
+            #region CLASS DEMO
+            try
+            {
+                List<Song> classicalSongs = songs.Where(x => x.Genre == Genre.Classical).ToList();
+                List<Song> classicalSongsWithLength = songs.Where(x => x.Genre == Genre.Classical && x.Length > 5).ToList();
 
-            List<Song> classicalSongs = songs.Where(x => x.Genre == Genre.Classical).ToList();
-            List<Song> classicalSongsWithLength = songs.Where(x => x.Genre == Genre.Classical && x.Length > 5).ToList();
+                List<string> classicalSongsNames = songs.Where(x => x.Genre == Genre.Classical).Select(x => $"{x.Title} ({x.Length}min.)").ToList();
 
-            List<string> classicalSongsNames = songs.Where(x => x.Genre == Genre.Classical).Select(x => $"{x.Title} ({x.Length}min.)").ToList();
+                Song firstSongThatHasTo = songs.First(x => x.Title.ToLower().Contains("Boris"));
+                Song firstOrDefaultSongThatHasTo = songs.FirstOrDefault(x => x.Title.ToLower().Contains("boris"));
 
-            Song firstSongThatHasTo = songs.First(x=> x.Title.ToLower().Contains("to"));
-            Song firstOrDefaultSongThatHasTo = songs.FirstOrDefault(x=> x.Title.ToLower().Contains("boris"));
+                if (firstOrDefaultSongThatHasTo != null)
+                    Console.WriteLine(firstOrDefaultSongThatHasTo.Title);
 
-            if(firstOrDefaultSongThatHasTo != null)
+                Console.WriteLine(firstSongThatHasTo.Title);
                 Console.WriteLine(firstOrDefaultSongThatHasTo.Title);
-      
-            Console.WriteLine(firstSongThatHasTo.Title);
 
 
-            List<Song> distinctSongs = songs.DistinctBy(x=> x.Title).ToList();
+                List<Song> distinctSongs = songs.DistinctBy(x => x.Title).ToList();
 
-            List<Song> sortByLength = songs.OrderBy(x=>x.Length).ToList();
+                List<Song> sortByLength = songs.OrderBy(x => x.Length).ToList();
 
-            List<IGrouping<Genre, Song>> groupByType = songs.GroupBy(x => x.Genre).ToList();
-           
+                List<IGrouping<Genre, Song>> groupByType = songs.GroupBy(x => x.Genre).ToList();
 
-            #endregion*/
+            }
+            catch(InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Error happened.PLease try again");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Global exception error!!");
+            }
+            finally
+            {
+                Console.WriteLine("Thank you for using our app");
+            }
+            #endregion
 
             List<Song> songsForBoris = songs.Where(x => x.Title.StartsWith("S")).ToList();
             persons[0].FavoriteSongs = songsForBoris;
