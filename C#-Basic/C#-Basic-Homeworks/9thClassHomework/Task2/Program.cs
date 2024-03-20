@@ -115,14 +115,14 @@ namespace Task2
 
                 List<string> classicalSongsNames = songs.Where(x => x.Genre == Genre.Classical).Select(x => $"{x.Title} ({x.Length}min.)").ToList();
 
-                Song firstSongThatHasTo = songs.First(x => x.Title.ToLower().Contains("Boris"));
+                //Song firstSongThatHasTo = songs.First(x => x.Title.ToLower().Contains("Boris"));
                 Song firstOrDefaultSongThatHasTo = songs.FirstOrDefault(x => x.Title.ToLower().Contains("boris"));
 
                 if (firstOrDefaultSongThatHasTo != null)
                     Console.WriteLine(firstOrDefaultSongThatHasTo.Title);
 
-                Console.WriteLine(firstSongThatHasTo.Title);
-                Console.WriteLine(firstOrDefaultSongThatHasTo.Title);
+                //Console.WriteLine(firstSongThatHasTo.Title);
+                //Console.WriteLine(firstOrDefaultSongThatHasTo.Title);
 
 
                 List<Song> distinctSongs = songs.DistinctBy(x => x.Title).ToList();
@@ -131,21 +131,7 @@ namespace Task2
 
                 List<IGrouping<Genre, Song>> groupByType = songs.GroupBy(x => x.Genre).ToList();
 
-            }
-            catch(InvalidOperationException ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("Error happened.PLease try again");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("Global exception error!!");
-            }
-            finally
-            {
-                Console.WriteLine("Thank you for using our app");
-            }
+            
             #endregion
 
             List<Song> songsForBoris = songs.Where(x => x.Title.StartsWith("S")).ToList();
@@ -168,6 +154,21 @@ namespace Task2
             Console.WriteLine(persons[1].GetFavSongs());
             Console.WriteLine(persons[2].GetFavSongs());
             Console.WriteLine(persons[3].GetFavSongs());
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Error happened.PLease try again");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Global exception error!!");
+            }
+            finally
+            {
+                Console.WriteLine("Thank you for using our app");
+            }
         }
     }
 }

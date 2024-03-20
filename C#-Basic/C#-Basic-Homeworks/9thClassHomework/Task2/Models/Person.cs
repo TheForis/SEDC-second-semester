@@ -15,23 +15,12 @@
                 return $"This person ->{FirstName}<- hates music!!!";
             }
             string favoriteSongs ="";
-            int counter=0;
-            for (int i = 0; i < FavoriteSongs.Count; i++)
+            foreach (Song song in FavoriteSongs)
             {
-                favoriteSongs += FavoriteSongs[i].Title;
-
-                if(counter == favoriteSongs.Count())
-                {
-                    favoriteSongs+=".";
-                }
-                else
-                {
-                    favoriteSongs += ", ";
-                    counter++;
-                }
+                favoriteSongs += $"{song.Title}\n" ;
             }
             
-            return $"{FirstName} favorite genre is: {FavoriteMusicType} and favorite songs are: {favoriteSongs}";
+            return $"{FirstName} favorite genre is: {FavoriteMusicType} and favorite songs are: \n{favoriteSongs}";
         }
             
         }
