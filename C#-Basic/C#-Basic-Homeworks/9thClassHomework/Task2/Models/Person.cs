@@ -8,14 +8,32 @@
         public int Age { get; set; }
         public Genre FavoriteMusicType { get; set; }
         public List<Song> FavoriteSongs { get; set; }
-        public List<Song> GetFavSongs() 
+        public string GetFavSongs() 
         {
-            if (FavoriteSongs == null)
+            if (FavoriteSongs == null || FavoriteSongs.Count == 0)
             {
-                Console.WriteLine("This person hates music!!!");
-                return null;
+                return $"This person ->{FirstName}<- hates music!!!";
             }
-            return FavoriteSongs;
+            string favoriteSongs ="";
+            int counter=0;
+            for (int i = 0; i < FavoriteSongs.Count; i++)
+            {
+                favoriteSongs += FavoriteSongs[i].Title;
+
+                if(counter == favoriteSongs.Count())
+                {
+                    favoriteSongs+=".";
+                }
+                else
+                {
+                    favoriteSongs += ", ";
+                    counter++;
+                }
+            }
+            
+            return $"{FirstName} favorite genre is: {FavoriteMusicType} and favorite songs are: {favoriteSongs}";
+        }
+            
         }
     }
-}
+

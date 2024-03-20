@@ -3,7 +3,7 @@
     public class Song
     {
         public string Title { get; set; }
-        public int Length { get; set;}
+        public decimal Length { get; set;}
         public Genre Genre { get; set; }
 
 

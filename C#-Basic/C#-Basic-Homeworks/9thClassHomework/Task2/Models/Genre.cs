@@ -2,9 +2,9 @@
 {
     public enum Genre
     {
-        Rock = 0,
-        HipHop = 1,
-        Techno = 2,
-        Classical = 3
+        Rock,
+        HipHop,
+        Techno,
+        Classical
     }
 }
