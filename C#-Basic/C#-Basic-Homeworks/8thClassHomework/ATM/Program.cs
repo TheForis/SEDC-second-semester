@@ -45,9 +45,10 @@ namespace ATM
                 Customer user = searchByCard(userCardNum, bankCustomers);
                 if (user != null)
                 {
-                    Console.WriteLine($"Hello {user.FirstName}. Please enter your PIN:");
+                    Console.Write($"Hello {user.FirstName}. Please enter your PIN: ");
                     if(int.Parse(Console.ReadLine()) == user.PinForCard)
                     {
+                        Console.Clear();
                         optionChooser(user);
                     }
                     else
@@ -117,7 +118,7 @@ namespace ATM
                     return customer;
                 }
             }
-            Console.WriteLine(userCardNumber);
+            Console.WriteLine($"The card with number: {userCardNumber.ToString("####-####-####-####")} was not found.");
             return null;
 
         }
