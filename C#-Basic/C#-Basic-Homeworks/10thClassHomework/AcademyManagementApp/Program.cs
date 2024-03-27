@@ -234,9 +234,6 @@ namespace AcademyManagementApp
                             int secondSubjectAttendees = 0;
                             int thirdSubjectAttendees = 0;
 
-
-                            
-
                             for (int i = 0; i < students.Count; i++)
                             {
                                 if (students[i].CurrentSubject.Name == subjects[0].Name)
