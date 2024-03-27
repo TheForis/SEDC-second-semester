@@ -68,7 +68,7 @@ namespace AcademyManagementApp
                 while (true)
                 {
                     int userInput = LogIn();
-                    Console.WriteLine(userInput);
+                    Console.WriteLine($"You have selected # {userInput}");
                     ShowList(userInput,admins,trainers,students,subjects);
                 }
             }
@@ -109,7 +109,7 @@ namespace AcademyManagementApp
                     break;
 
             case 2:
-                    TrainerLoggedIn(trainers, students);
+                    TrainerLoggedIn(trainers, students,subjects);
                     break;
 
                 case 3:
@@ -186,7 +186,7 @@ namespace AcademyManagementApp
             }
         }
 
-        static void TrainerLoggedIn(List<Trainer> trainers, List<Student> students)
+        static void TrainerLoggedIn(List<Trainer> trainers, List<Student> students,List<Subject> subjects)
         {
             bool loggedIn = true;
             Console.WriteLine("Who are you? Please choose from the list below!");
@@ -230,30 +230,32 @@ namespace AcademyManagementApp
                         }
                         else if (trainerOption == "2")
                         {
-                            int englishAttendees = 0;
-                            int chemistyAttendees = 0;
-                            int biologyAttendees = 0;
+                            int firstSubjectAttendees = 0;
+                            int secondSubjectAttendees = 0;
+                            int thirdSubjectAttendees = 0;
 
+
+                            
 
                             for (int i = 0; i < students.Count; i++)
                             {
-                                if (students[i].CurrentSubject.Name == "English")
+                                if (students[i].CurrentSubject.Name == subjects[0].Name)
                                 {
-                                    englishAttendees++;
+                                    firstSubjectAttendees++;
                                 }
-                                else if (students[i].CurrentSubject.Name == "Chemistry")
+                                else if (students[i].CurrentSubject.Name == subjects[1].Name)
                                 {
-                                    chemistyAttendees++;
+                                    secondSubjectAttendees++;
                                 }
-                                else if (students[i].CurrentSubject.Name == "Biology")
+                                else if (students[i].CurrentSubject.Name == subjects[2].Name)
                                 {
-                                    biologyAttendees++;
+                                    thirdSubjectAttendees++;
                                 }
                             }
 
-                            Console.WriteLine($"There are {englishAttendees} people currently attending English.");
-                            Console.WriteLine($"There are {chemistyAttendees} people currently attending Chemistry.");
-                            Console.WriteLine($"There are {biologyAttendees} people currently attending Biology.");
+                            Console.WriteLine($"There are {firstSubjectAttendees} people currently attending {subjects[0].Name}.");
+                            Console.WriteLine($"There are {secondSubjectAttendees} people currently attending {subjects[1].Name}.");
+                            Console.WriteLine($"There are {thirdSubjectAttendees} people currently attending {subjects[2].Name}.");
                         }
 
 
