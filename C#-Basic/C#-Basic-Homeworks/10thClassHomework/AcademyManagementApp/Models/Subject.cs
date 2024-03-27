@@ -1,11 +1,13 @@
-﻿namespace AcademyManagementApp.Models
+﻿using System.Runtime.InteropServices;
+
+namespace AcademyManagementApp.Models
 {
     public class Subject
     {
         public string Name { get; set; }
-        public int Grade { get; set; }
+        public char Grade { get; set; }
         public Subject() { }
-        public Subject(string name, int grade)
+        public Subject(string name, char grade)
         {
             Name = name;
             Grade = grade;

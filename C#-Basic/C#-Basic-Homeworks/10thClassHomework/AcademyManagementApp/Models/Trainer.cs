@@ -1,6 +1,1 @@
-﻿namespace AcademyManagementApp.Models
-{
-    public class Trainer
-    {
-    }
-}
+﻿namespace AcademyManagementApp.Models {     public class Trainer     {         public string Name { get; set; }         public Trainer()         {                      }         public Trainer(string name)         {             Name = name;         }     } } 
