@@ -34,15 +34,6 @@ namespace Task1Interface
                 }
 
                 Console.WriteLine(searchService.Search(UserWord()));
-
-
-
-
-
-
-
-
-
                 tryAgain = SearchAgain();
             }
             
@@ -77,7 +68,7 @@ namespace Task1Interface
         }
         static bool SearchAgain ()
         {
-            Console.Write("Would you like to search again? Enter \"Y\" if you want to search again or press any key to exit");
+            Console.Write("Would you like to search again? Enter \"Y\" if you want to search again or press any key to exit: ");
             string userInput = Console.ReadLine().ToLower();
             if (userInput == "y")
             {
