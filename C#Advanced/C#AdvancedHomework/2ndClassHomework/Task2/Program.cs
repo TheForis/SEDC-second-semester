@@ -28,7 +28,8 @@ namespace Task2
         {
             int workingDays = 0;
             DateTime today = DateTime.Today;
-            for (int i = 0; i < 30 ; i++)
+            int daysInMonth = DateTime.DaysInMonth(today.Year,today.Month);
+            for (int i = 0; i < daysInMonth ; i++)
             {
 
                 if (today.DayOfWeek == DayOfWeek.Saturday
