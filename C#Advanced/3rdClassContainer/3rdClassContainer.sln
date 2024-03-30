@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01FromClass02", "Excercise01FromClass02\Exercise01FromClass02.csproj", "{6ECDC9E7-3A62-4C6B-A32D-71C9C7C6C1D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise01FromClass02", "Excercise01FromClass02\Exercise01FromClass02.csproj", "{6ECDC9E7-3A62-4C6B-A32D-71C9C7C6C1D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{DA7813B3-0E89-4A1A-9442-F7C47E34F605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{DA7813B3-0E89-4A1A-9442-F7C47E34F605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo1Polymorphism", "Demo1Polymorphism\Demo1Polymorphism.csproj", "{078A7207-EC99-4C6C-8B0A-E4F41BE43982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo2", "Demo2\Demo2.csproj", "{555260DC-BD6C-4C3F-9628-8310E33B6F1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassExercise", "ClassExercise\ClassExercise.csproj", "{2D8A1915-074B-4E35-B5BC-573C08C45B8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{DA7813B3-0E89-4A1A-9442-F7C47E34F605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA7813B3-0E89-4A1A-9442-F7C47E34F605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA7813B3-0E89-4A1A-9442-F7C47E34F605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078A7207-EC99-4C6C-8B0A-E4F41BE43982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078A7207-EC99-4C6C-8B0A-E4F41BE43982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078A7207-EC99-4C6C-8B0A-E4F41BE43982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078A7207-EC99-4C6C-8B0A-E4F41BE43982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555260DC-BD6C-4C3F-9628-8310E33B6F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555260DC-BD6C-4C3F-9628-8310E33B6F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555260DC-BD6C-4C3F-9628-8310E33B6F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555260DC-BD6C-4C3F-9628-8310E33B6F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D8A1915-074B-4E35-B5BC-573C08C45B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8A1915-074B-4E35-B5BC-573C08C45B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8A1915-074B-4E35-B5BC-573C08C45B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8A1915-074B-4E35-B5BC-573C08C45B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
