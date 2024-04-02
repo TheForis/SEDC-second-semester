@@ -1,7 +1,7 @@
 ﻿using Task2.Models;
-using System;
+using Extender;
 
-namespace Task2
+namespace Task2Extended
 {
     internal class Program
     {
@@ -17,10 +17,7 @@ namespace Task2
             boat.DisplayInfo();
             plane.DisplayInfo();
 
-            car.Drive();
-            motorBike.Wheelie();
-            boat.Sail();
-            plane.Fly();
+            Extender.Drive(car);
         }
     }
 }
