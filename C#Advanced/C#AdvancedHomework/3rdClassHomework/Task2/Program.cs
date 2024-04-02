@@ -17,10 +17,17 @@ namespace Task2
             boat.DisplayInfo();
             plane.DisplayInfo();
 
-            car.Drive();
-            motorBike.Wheelie();
-            boat.Sail();
-            plane.Fly();
+            try
+            {
+                car.Drive();
+                motorBike.Wheelie();
+                boat.Sail();
+                plane.Fly();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }
