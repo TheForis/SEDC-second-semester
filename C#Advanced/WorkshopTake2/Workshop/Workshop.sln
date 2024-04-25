@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiManager", "TaxiManager\TaxiManager.csproj", "{2011DD1B-B42A-4A22-B3D6-AC2EF0EB7501}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.csproj", "{49905787-1FA4-4641-8F06-CA845F4F7BDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2011DD1B-B42A-4A22-B3D6-AC2EF0EB7501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2011DD1B-B42A-4A22-B3D6-AC2EF0EB7501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2011DD1B-B42A-4A22-B3D6-AC2EF0EB7501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2011DD1B-B42A-4A22-B3D6-AC2EF0EB7501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49905787-1FA4-4641-8F06-CA845F4F7BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49905787-1FA4-4641-8F06-CA845F4F7BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49905787-1FA4-4641-8F06-CA845F4F7BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49905787-1FA4-4641-8F06-CA845F4F7BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20869585-9E5D-4A9C-9DDF-E470B72B1020}
+	EndGlobalSection
+EndGlobal
