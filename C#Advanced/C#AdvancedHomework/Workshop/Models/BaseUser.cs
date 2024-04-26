@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public abstract class BaseUser : IUser
+    public abstract class BaseUser
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

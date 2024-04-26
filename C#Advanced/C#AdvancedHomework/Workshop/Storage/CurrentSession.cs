@@ -4,6 +4,6 @@ namespace Storage
 {
     public static class CurrentSession
     {
-        public static IUser LoggedIn;
+        public static BaseUser LoggedIn;
     }
 }

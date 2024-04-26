@@ -10,7 +10,7 @@ namespace Storage
             new Trainer("Risto", "Panchevski", "trainerRisto", "risto1"),
             new Trainer("Slave", "Ivanovski", "trainerSlave", "Slave1")
         };
-        public static Dictionary<IUser, List<DateTime>> LiveTrainings = new Dictionary<IUser, List<DateTime>>();
+        public static Dictionary<BaseUser, List<DateTime>> LiveTrainings = new Dictionary<BaseUser, List<DateTime>>();
         public static void AddUser(User user)
         {
             if (Users.Contains(user))
