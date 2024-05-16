@@ -9,14 +9,6 @@ namespace FitApp
         static void Main(string[] args)
         {
             UIService _service = new UIService();
-            string folderPath = @"..\..\..\..\Data";
-            string trainingsPath = $@"{folderPath}\trainings.json";
-            if (!Directory.Exists(folderPath)){
-                Directory.CreateDirectory(folderPath);
-            }
-            if (!File.Exists(trainingsPath)) {
-                File.Create(trainingsPath).Close();
-            }
 
             while (true)
             {

@@ -153,8 +153,16 @@ namespace Services
             var today = DateTime.Now;
             var trainingList = StorageSpace.LiveTrainings.SelectMany(x => x.Value).ToList();
             var nextTraining = trainingList.Where(x => x.Date >= today).OrderBy(x => (x - today).Ticks).FirstOrDefault();
-            Console.WriteLine($"The next live training is on {nextTraining.DayOfWeek}. [ {nextTraining} ]");
-
+            if (trainingList.Count == 0 || nextTraining < today)
+            {
+                Console.WriteLine("There are no scheduled trainings!");
+                return;
+            }
+            else
+            {
+                
+                Console.WriteLine($"The next live training is on {nextTraining.DayOfWeek}. [ {nextTraining} ]");
+            }
         }
         public void CreateTraining()
         {
