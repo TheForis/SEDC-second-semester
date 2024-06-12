@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="col-md-5">
+        @Html.ActionLink("Privacy", "Privacy",null,null, new {@class = "btn btn-primary"})
+
+        @Html.TextBox("Input1", "Vnesete ime", null, new { @class = "form-control mt-4" })
+
+        @Html.TextArea("TextArea1", " " ,new { @class = "form-control mt-4" })
+
+        @Html.DropDownList("Dropdown1", new List<SelectListItem>
+            {
+            new SelectListItem("Programer","1"),
+            new SelectListItem("QA", "2"),
+            new SelectListItem("DevOps", "3"),
+        }, "-- Choose profession --", new { @class = "form-control mt-4" })
+
+        <div class="form-check">
+        @Html.RadioButton("RadioButton1", "G1", true, new {@class = "form-check-input"})
+        @Html.Label("Label1","Group1", new {@class = "form-control-label"})
+            @Html.RadioButton("RadioButton1", "G2", true, new { @class = "form-check-input" })
+            @Html.Label("Label1", "Group2", new { @class = "form-control-label" })
+            @Html.RadioButton("RadioButton1", "G3", true, new { @class = "form-check-input" })
+            @Html.Label("Label1", "Group3", new { @class = "form-control-label" })
+            @Html.RadioButton("RadioButton1", "G4", true, new { @class = "form-check-input" })
+            @Html.Label("Label1", "Group4", new { @class = "form-control-label" })
+            @Html.RadioButton("RadioButton1", "G5", true, new { @class = "form-check-input" })
+            @Html.Label("Label1", "Group5", new { @class = "form-control-label" })
+        </div>
+    </div>
+</div>
