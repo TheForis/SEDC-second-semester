@@ -1,4 +1,13 @@
-﻿<div class="row">
+﻿@model UserViewModel
+@{
+    List<SelectListItem> items = new List<SelectListItem>{
+            new SelectListItem("Programer","1"),
+            new SelectListItem("QA", "2"),
+            new SelectListItem("DevOps", "3")};
+}
+
+
+<div class="row">
     <div class="col-md-5">
         @Html.ActionLink("Privacy", "Privacy",null,null, new {@class = "btn btn-primary"})
 
@@ -16,14 +25,34 @@
         <div class="form-check">
         @Html.RadioButton("RadioButton1", "G1", true, new {@class = "form-check-input"})
         @Html.Label("Label1","Group1", new {@class = "form-control-label"})
+        <br />
             @Html.RadioButton("RadioButton1", "G2", true, new { @class = "form-check-input" })
             @Html.Label("Label1", "Group2", new { @class = "form-control-label" })
+            <br />
             @Html.RadioButton("RadioButton1", "G3", true, new { @class = "form-check-input" })
             @Html.Label("Label1", "Group3", new { @class = "form-control-label" })
+            <br />
+
             @Html.RadioButton("RadioButton1", "G4", true, new { @class = "form-check-input" })
             @Html.Label("Label1", "Group4", new { @class = "form-control-label" })
+            <br />
             @Html.RadioButton("RadioButton1", "G5", true, new { @class = "form-check-input" })
             @Html.Label("Label1", "Group5", new { @class = "form-control-label" })
+            <br />
         </div>
     </div>
+</div>
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    <a asp-action="Privacy" asp-controller="Home" asp-route-id = "1" class="btn btn-primary">Privacy</a>
+                     <input asp-for="FirstName" class="form-control" placeholder="Enter a name" />
+                     <textarea asp-for="LastName" class="form-control" placeholder="Enter last name"></textarea>
+                     <select asp-for="Profession" asp-items="@items" class="form-control">
+                         <option>Pick a profession</option>
+                     </select>
+                </div>
+   
+
 </div>
