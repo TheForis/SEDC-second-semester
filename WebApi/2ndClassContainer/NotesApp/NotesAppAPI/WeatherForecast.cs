@@ -1,4 +1,4 @@
-namespace Demo1
+namespace NotesAppAPI
 {
     public class WeatherForecast
     {

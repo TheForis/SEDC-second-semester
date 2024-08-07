@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:16914",
-      "sslPort": 44303
+      "applicationUrl": "http://localhost:39398",
+      "sslPort": 44326
     }
   },
   "profiles": {
-    "Demo1": {
+    "NotesAppAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
-      "applicationUrl": "https://localhost:7075;http://localhost:5163",
+      "applicationUrl": "https://localhost:7060;http://localhost:5120",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

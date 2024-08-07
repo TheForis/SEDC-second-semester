@@ -1,4 +1,6 @@
-namespace Demo1
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+
+namespace NotesAppAPI
 {
     public class Program
     {
@@ -9,6 +11,10 @@ namespace Demo1
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.Configure<KestrelServerOptions>(opt =>
+            {
+                opt.AllowSynchronousIO = true;
+            });
 
             var app = builder.Build();
 
@@ -20,6 +26,8 @@ namespace Demo1
 
 
             app.MapControllers();
+
+            app.UseStaticFiles();
 
             app.Run();
         }

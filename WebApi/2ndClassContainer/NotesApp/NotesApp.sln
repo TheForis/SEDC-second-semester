@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo1", "Demo1\Demo1.csproj", "{04112159-96C5-4A3A-9AB8-E6F7F7BC198B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAppAPI", "NotesAppAPI\NotesAppAPI.csproj", "{445CF2E7-C435-4557-9B19-C460778E9EDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04112159-96C5-4A3A-9AB8-E6F7F7BC198B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04112159-96C5-4A3A-9AB8-E6F7F7BC198B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04112159-96C5-4A3A-9AB8-E6F7F7BC198B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04112159-96C5-4A3A-9AB8-E6F7F7BC198B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445CF2E7-C435-4557-9B19-C460778E9EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445CF2E7-C435-4557-9B19-C460778E9EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445CF2E7-C435-4557-9B19-C460778E9EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445CF2E7-C435-4557-9B19-C460778E9EDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {21AF456E-B07D-43EF-B417-FA56CF78520B}
+		SolutionGuid = {4576DD92-F8A4-408E-866C-290AEE78CF5A}
 	EndGlobalSection
 EndGlobal
