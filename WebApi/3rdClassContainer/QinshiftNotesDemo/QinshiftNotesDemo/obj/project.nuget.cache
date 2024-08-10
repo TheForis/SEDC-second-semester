@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "QvsoBkm4h0kmcHR8L2RzJ4kzo8nx7DGPccGY5oyVlZhCKPsfujq4mmsWGqmnmW76aloK7uba2hsQcXvbwMPuww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Code\\Desktop\\projectToCopy\\WEB API\\3rdClassContainer\\QinshiftNotesDemo\\QinshiftNotesDemo\\QinshiftNotesDemoAppAndTags.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Code\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Code\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\Code\\.nuget\\packages\\swashbuckle.aspnetcore\\6.7.0\\swashbuckle.aspnetcore.6.7.0.nupkg.sha512",
+    "C:\\Users\\Code\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.7.0\\swashbuckle.aspnetcore.swagger.6.7.0.nupkg.sha512",
+    "C:\\Users\\Code\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.7.0\\swashbuckle.aspnetcore.swaggergen.6.7.0.nupkg.sha512",
+    "C:\\Users\\Code\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.7.0\\swashbuckle.aspnetcore.swaggerui.6.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

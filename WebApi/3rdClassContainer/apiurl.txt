@@ -1,0 +1,1 @@
+https://www.xweather.com/docs/javascript-sdk
