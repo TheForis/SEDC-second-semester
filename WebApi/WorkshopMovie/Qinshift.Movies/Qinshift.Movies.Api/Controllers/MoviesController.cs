@@ -104,8 +104,31 @@ namespace Qinshift.Movies.Api.Controllers
                 {
                     return BadRequest("The id must be a positive integer!");
                 }
-                return Ok();
+                if (string.IsNullOrEmpty(movie.Title) || movie.ReleaseDate == null || movie.Genre == null)
+                {
+                    return BadRequest("You must provide the Title, Release date and genre for the movie!");
+                }
+                _movieService.UpdateMovie(id, movie);
+                return Ok("Movie successfully updated!");
                 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("DeleteMovieById/{id:int}")]
+        public IActionResult DeleteMovie(int id) 
+        {
+            try
+            {
+                if (id < 0)
+                {
+                    return BadRequest("The id must be a positive integer!");
+                }
+                _movieService.DeleteMovie(id);
+                return Ok("Movie deleted!");
             }
             catch (Exception ex)
             {

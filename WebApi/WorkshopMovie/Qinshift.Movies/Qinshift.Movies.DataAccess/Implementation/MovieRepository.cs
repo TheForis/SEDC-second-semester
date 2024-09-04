@@ -32,12 +32,16 @@ namespace Qinshift.Movies.DataAccess.Implementation
             return result;
         }
 
-        public void UpdateMovie(Movie movie)
+        public void UpdateMovie(int id,Movie movie)
         {
-            var updateMovie = GetById(movie.Id);
+            var updateMovie = GetById(id);
             if (updateMovie != null)
             {
-                _movieDb.Movies.Update(movie);
+                updateMovie.Title = movie.Title;
+                updateMovie.ReleaseDate = movie.ReleaseDate;
+                updateMovie.Plot = movie.Plot;
+                updateMovie.Genre = movie.Genre;
+                _movieDb.SaveChanges();
             }
             else
             {
@@ -48,6 +52,7 @@ namespace Qinshift.Movies.DataAccess.Implementation
         public void DeleteMovie(Movie movie)
         {
             _movieDb.Movies.Remove(movie);
+            _movieDb.SaveChanges();
         }
         public void DeleteMovieById(int id)
         {

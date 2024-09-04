@@ -7,7 +7,7 @@ namespace Qinshift.Movies.DataAccess.Interface
         List<Movie> GetAll();
         Movie GetById(int id);
         void CreateMovie(Movie movie);
-        void UpdateMovie(Movie movie);
+        void UpdateMovie(int id,Movie movie);
         void DeleteMovieById(int id);
         void DeleteMovie(Movie movie);
     }

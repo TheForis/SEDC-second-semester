@@ -5,7 +5,7 @@ namespace Qinshift.Movies.Services.Helper
 {
     public static class MovieMapper
     {
-        public static MovieDto MapToDto (Movie movie)
+        public static MovieDto MapToDto(Movie movie)
         {
             var result = new MovieDto()
             {
@@ -17,7 +17,8 @@ namespace Qinshift.Movies.Services.Helper
             };
             return result;
         }
-        public static Movie MapToMovie(CreateMovieDto movie) {
+        public static Movie MapToMovie(CreateMovieDto movie)
+        {
             var result = new Movie()
             {
                 Title = movie.Title,

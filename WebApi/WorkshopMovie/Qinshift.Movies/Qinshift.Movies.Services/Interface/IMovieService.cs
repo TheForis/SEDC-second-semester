@@ -9,7 +9,7 @@ namespace Qinshift.Movies.Services.Interface
         MovieDto GetMovieByGenre();
         MovieDto GetMovieByYear();
         void CreateMovie(CreateMovieDto movie);
-        void UpdateMovie(MovieDto movie);
+        void UpdateMovie(int id,CreateMovieDto movie);
         void DeleteMovie(int id);
 
     }

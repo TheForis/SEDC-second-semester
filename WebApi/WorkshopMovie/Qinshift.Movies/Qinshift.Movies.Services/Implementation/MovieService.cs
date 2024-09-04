@@ -43,9 +43,13 @@ namespace Qinshift.Movies.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public void UpdateMovie(MovieDto movie)
+        public void UpdateMovie(int id,CreateMovieDto movie)
         {
-            throw new NotImplementedException();
+            var movieToEdit = _movieRepository.GetById(id);
+            if (movieToEdit == null) throw new Exception("Movie not found!");
+
+            var mappedMovie = MovieMapper.MapToMovie(movie);
+            _movieRepository.UpdateMovie(id, mappedMovie);
         }
         public void CreateMovie(CreateMovieDto movie)
         {
@@ -55,7 +59,15 @@ namespace Qinshift.Movies.Services.Implementation
 
         public void DeleteMovie(int id)
         {
-            throw new NotImplementedException();
+            var movieToDelete = _movieRepository.GetById(id);
+            if (movieToDelete != null)
+            {
+                _movieRepository.DeleteMovie(movieToDelete);
+            }
+            else
+            {
+                throw new Exception($"Movie with id {id} does not exist!");
+            }
         }
     }
 }
