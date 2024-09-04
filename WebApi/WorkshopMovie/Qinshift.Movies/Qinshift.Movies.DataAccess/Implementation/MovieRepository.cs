@@ -18,7 +18,7 @@ namespace Qinshift.Movies.DataAccess.Implementation
             _movieDb.SaveChanges();
         }
 
-        
+
 
         public List<Movie> GetAll()
         {
@@ -32,7 +32,7 @@ namespace Qinshift.Movies.DataAccess.Implementation
             return result;
         }
 
-        public void UpdateMovie(int id,Movie movie)
+        public void UpdateMovie(int id, Movie movie)
         {
             var updateMovie = GetById(id);
             if (updateMovie != null)
@@ -47,7 +47,7 @@ namespace Qinshift.Movies.DataAccess.Implementation
             {
                 throw new Exception($"No movie found with id [{movie}]");
             }
-            
+
         }
         public void DeleteMovie(Movie movie)
         {
@@ -58,6 +58,22 @@ namespace Qinshift.Movies.DataAccess.Implementation
         {
             var movieToDelete = GetById(id);
             DeleteMovie(movieToDelete);
+        }
+        public List<Movie> MoviesByGenre(GenreEnum genre)
+        {
+            var movieList = _movieDb.Movies.Where(x => x.Genre == genre).ToList();
+            return movieList;
+        }
+        public List<Movie> MoviesByYear(int releaseYear)
+        {
+            var movieList = _movieDb.Movies.Where(x => x.ReleaseDate.Year == releaseYear).ToList();
+            return movieList;
+
+        }
+        public List<Movie> MoviesByYearAndGenre (GenreEnum genre, int releaseYear)
+        {
+            var movieList = _movieDb.Movies.Where(x => x.ReleaseDate.Year == releaseYear && x.Genre == genre).ToList();
+            return movieList;
         }
     }
 }

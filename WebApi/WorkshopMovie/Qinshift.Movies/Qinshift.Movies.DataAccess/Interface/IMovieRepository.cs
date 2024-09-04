@@ -10,5 +10,8 @@ namespace Qinshift.Movies.DataAccess.Interface
         void UpdateMovie(int id,Movie movie);
         void DeleteMovieById(int id);
         void DeleteMovie(Movie movie);
+        List<Movie> MoviesByYearAndGenre(GenreEnum genre, int releaseYear);
+        List<Movie> MoviesByYear(int releaseYear);
+        List<Movie> MoviesByGenre(GenreEnum genre);
     }
 }

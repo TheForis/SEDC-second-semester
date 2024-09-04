@@ -2,6 +2,7 @@
 using Qinshift.Movies.Services.Interface;
 using Qinshift.Movies.Services.Helper;
 using Qinshift.Movies.DataAccess.Interface;
+using Qinshift.Movies.DomainModels;
 
 namespace Qinshift.Movies.Services.Implementation
 {
@@ -33,14 +34,53 @@ namespace Qinshift.Movies.Services.Implementation
             return null;
         }
 
-        public MovieDto GetMovieByGenre()
+        public List<MovieDto> GetMovieByGenre( string genre)
         {
-            throw new NotImplementedException();
+            if (Enum.TryParse(typeof(GenreEnum), genre, out var parsedEnum) )
+            {
+                var moviesResult = _movieRepository.MoviesByGenre((GenreEnum)parsedEnum);
+                if (moviesResult.Count > 0)
+                {
+                    return moviesResult.Select(x => MovieMapper.MapToDto(x)).ToList();
+                }
+                else { throw new Exception("There are no movies with that genre!"); }
+
+            }
+            else { throw new Exception($"The genre [{genre}] does not exist! Please try again!"); }
+
         }
 
-        public MovieDto GetMovieByYear()
+        public List<MovieDto> GetMovieByYear(int year)
         {
-            throw new NotImplementedException();
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                throw new Exception("You must enter valid year");
+            }
+            var result = _movieRepository.MoviesByYear(year);
+            if (result.Count > 0) { 
+               return result.Select(x => MovieMapper.MapToDto(x)).ToList();
+            }
+            else { throw new Exception($"There are no movies released on {year}"); }
+        }
+        public List<MovieDto> GetMovieByYearAndGenre(int year, string genre)
+        {
+            if (year < 1900 || year > DateTime.Now.Year)
+            {
+                throw new Exception("You must enter valid year");
+            }
+            if (Enum.TryParse(typeof(GenreEnum), genre, out var parsedEnum))
+            {
+                var moviesResult = _movieRepository.MoviesByYearAndGenre((GenreEnum)parsedEnum, year);
+                if (moviesResult.Count > 0)
+                {
+                    return moviesResult.Select(x => MovieMapper.MapToDto(x)).ToList();
+                }
+                else { throw new Exception("There are no movies with that genre and year!"); }
+            }
+            else
+            {
+                throw new Exception("There are no movies with that genre and year!");
+            }
         }
 
         public void UpdateMovie(int id,CreateMovieDto movie)
@@ -69,5 +109,7 @@ namespace Qinshift.Movies.Services.Implementation
                 throw new Exception($"Movie with id {id} does not exist!");
             }
         }
+
+        
     }
 }

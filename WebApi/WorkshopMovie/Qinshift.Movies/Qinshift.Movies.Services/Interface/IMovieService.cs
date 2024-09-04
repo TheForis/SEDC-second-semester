@@ -6,8 +6,9 @@ namespace Qinshift.Movies.Services.Interface
     {
         List<MovieDto> GetAllMovies();
         MovieDto GetById(int id);
-        MovieDto GetMovieByGenre();
-        MovieDto GetMovieByYear();
+        List<MovieDto> GetMovieByGenre(string genre);
+        List<MovieDto> GetMovieByYear(int year);
+        List<MovieDto> GetMovieByYearAndGenre(int year, string genre);
         void CreateMovie(CreateMovieDto movie);
         void UpdateMovie(int id,CreateMovieDto movie);
         void DeleteMovie(int id);

@@ -135,6 +135,31 @@ namespace Qinshift.Movies.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("GetMoviesByGenreAndOrYear")]
+        public ActionResult<List<MovieDto>> GetMovieByGenreAndOrYear(string? genre,int? year) 
+        {
+            try
+            {
+
+                if (!string.IsNullOrEmpty(genre) && year != null) 
+                {
+                    var result = _movieService.GetMovieByYearAndGenre((int)year, genre);
+                    return Ok(result);
+                }
+                if (string.IsNullOrEmpty(genre)){
+                    var result = _movieService.GetMovieByYear((int)year);
+                    return Ok(result);
+                }
+                if (year == null)
+                {
+                    var result = _movieService.GetMovieByGenre(genre);
+                    return Ok(result);
+                }
+                else { return BadRequest("Genre or year must be specified!"); }
+                
+            }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+        }
 
     }
 }
