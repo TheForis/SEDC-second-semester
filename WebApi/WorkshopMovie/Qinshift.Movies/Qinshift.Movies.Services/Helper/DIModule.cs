@@ -12,7 +12,7 @@ namespace Qinshift.Movies.Services.Helper
     {
         public static IServiceCollection RegisterDbContext(this IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<MovieDbContext>
+            services.AddDbContext<MovieAppDbContext>
                 (opts => opts.UseSqlServer(connectionString));
 
             return services;
@@ -22,7 +22,10 @@ namespace Qinshift.Movies.Services.Helper
         {
             services.AddTransient(typeof(IMovieRepository), typeof(MovieRepository));
             services.AddTransient<IMovieRepository, MovieRepository>();
-            services.AddScoped<IMovieService, MovieService>();
+
+            services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
+            services.AddTransient<IUserRepository, UserRepository>();
+            
 
             return services;
         }

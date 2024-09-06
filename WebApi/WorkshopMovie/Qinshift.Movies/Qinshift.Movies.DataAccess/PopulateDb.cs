@@ -62,6 +62,34 @@ namespace Qinshift.Movies.DataAccess
 
         }
                 );
+            modelBuilder.Entity<User>()
+                .HasData(new List<User>
+                {
+                    new User
+                    {
+                        Id= 1,
+                        FirstName = "Admin",
+                        LastName = "Administrator",
+                        UserName = "admin",
+                        Password = "admin"
+                    },
+                    new User 
+                    {
+                        Id= 2,
+                        FirstName = "Boris",
+                        LastName = "Krstovski",
+                        UserName = "boris",
+                        Password = "boris1234"
+                    },
+                    new User
+                    {
+                        Id= 3,
+                        FirstName = "Test",
+                        LastName = "Testing",
+                        UserName = "test",
+                        Password = "test123"
+                    }
+                });
         }
     }
 }

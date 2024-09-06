@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Qinshift.Movies.DTOs;
 using Qinshift.Movies.DTOs.Enums;
 using Qinshift.Movies.Services.Interface;
@@ -38,6 +39,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
         }
         [HttpGet("GetById/{id:int}")]
+        [Authorize]
         public ActionResult<MovieDto> GetById([FromRoute] int id)
         {
             try
@@ -55,6 +57,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
         }
         [HttpGet("GetById")]
+        [Authorize]
         public ActionResult<MovieDto> GetByIdQuery([FromQuery] int id)
         {
             try
@@ -72,6 +75,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
         }
         [HttpPost("CreateNewMovie")]
+        [Authorize]
         public IActionResult CreateNewMovie(string title, DateTime releaseDate, int genre, string? plot)
         {
             try
@@ -96,6 +100,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
         }
         [HttpPut("/EditMovieId/{id:int}")]
+        [Authorize]
         public IActionResult UpdateMovie(int id, [FromBody] CreateMovieDto movie) 
         {
             try
@@ -119,6 +124,7 @@ namespace Qinshift.Movies.Api.Controllers
         }
 
         [HttpDelete("DeleteMovieById/{id:int}")]
+        [Authorize]
         public IActionResult DeleteMovie(int id) 
         {
             try
@@ -136,6 +142,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
         }
         [HttpGet("GetMoviesByGenreAndOrYear")]
+        [Authorize]
         public ActionResult<List<MovieDto>> GetMovieByGenreAndOrYear(string? genre,int? year) 
         {
             try

@@ -2,7 +2,7 @@
 
 namespace Qinshift.Movies.DomainModels
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         [Key]
         [Required]

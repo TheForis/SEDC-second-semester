@@ -5,9 +5,9 @@ namespace Qinshift.Movies.DataAccess.Implementation
 {
     public class MovieRepository : IMovieRepository
     {
-        private readonly MovieDbContext _movieDb;
+        private readonly MovieAppDbContext _movieDb;
 
-        public MovieRepository(MovieDbContext movieDb)
+        public MovieRepository(MovieAppDbContext movieDb)
         {
             _movieDb = movieDb;
         }

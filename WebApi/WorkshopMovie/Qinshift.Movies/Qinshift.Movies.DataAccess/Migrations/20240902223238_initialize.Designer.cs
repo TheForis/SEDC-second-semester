@@ -11,7 +11,7 @@ using Qinshift.Movies.DataAccess;
 
 namespace Qinshift.Movies.DataAccess.Migrations
 {
-    [DbContext(typeof(MovieDbContext))]
+    [DbContext(typeof(MovieAppDbContext))]
     [Migration("20240902223238_initialize")]
     partial class initialize
     {
