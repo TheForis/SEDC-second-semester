@@ -35,7 +35,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message));
             }
         }
         [HttpGet("GetById/{id:int}")]
@@ -53,7 +53,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message));
             }
         }
         [HttpGet("GetById")]
@@ -71,37 +71,31 @@ namespace Qinshift.Movies.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message));
             }
         }
         [HttpPost("CreateNewMovie")]
         [Authorize]
-        public IActionResult CreateNewMovie(string title, DateTime releaseDate, int genre, string? plot)
+        public IActionResult CreateNewMovie([FromBody] CreateMovieDto movie)
         {
             try
             {
-                if (string.IsNullOrEmpty(title) || releaseDate == null || genre < 1 || genre > 11)
+                if (string.IsNullOrEmpty(movie.Title) || movie.ReleaseDate == null || movie.Genre == null)
                 {
-                    return BadRequest("Title, release date and genre are required parametars!");
+                    return BadRequest("You must provide the Title, Release date and genre for the movie!");
                 }
-                var movieResult = new CreateMovieDto()
-                {
-                    Title = title,
-                    Plot = plot,
-                    ReleaseDate = releaseDate,
-                    Genre = (GenreDto)genre
-                };
-                _movieService.CreateMovie(movieResult);
+
+                _movieService.CreateMovie(movie);
                 return Ok("Movie Created");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [HttpPut("/EditMovieId/{id:int}")]
+        [HttpPut("EditMovieId/{id:int}")]
         [Authorize]
-        public IActionResult UpdateMovie(int id, [FromBody] CreateMovieDto movie) 
+        public IActionResult UpdateMovie(int id, [FromBody] CreateMovieDto movie)
         {
             try
             {
@@ -115,17 +109,17 @@ namespace Qinshift.Movies.Api.Controllers
                 }
                 _movieService.UpdateMovie(id, movie);
                 return Ok("Movie successfully updated!");
-                
+
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message));
             }
         }
 
         [HttpDelete("DeleteMovieById/{id:int}")]
         [Authorize]
-        public IActionResult DeleteMovie(int id) 
+        public IActionResult DeleteMovie(int id)
         {
             try
             {
@@ -138,22 +132,23 @@ namespace Qinshift.Movies.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message));
             }
         }
         [HttpGet("GetMoviesByGenreAndOrYear")]
         [Authorize]
-        public ActionResult<List<MovieDto>> GetMovieByGenreAndOrYear(string? genre,int? year) 
+        public ActionResult<List<MovieDto>> GetMovieByGenreAndOrYear(string? genre, int? year)
         {
             try
             {
 
-                if (!string.IsNullOrEmpty(genre) && year != null) 
+                if (!string.IsNullOrEmpty(genre) && year != null)
                 {
                     var result = _movieService.GetMovieByYearAndGenre((int)year, genre);
                     return Ok(result);
                 }
-                if (string.IsNullOrEmpty(genre)){
+                if (string.IsNullOrEmpty(genre))
+                {
                     var result = _movieService.GetMovieByYear((int)year);
                     return Ok(result);
                 }
@@ -163,9 +158,9 @@ namespace Qinshift.Movies.Api.Controllers
                     return Ok(result);
                 }
                 else { return BadRequest("Genre or year must be specified!"); }
-                
+
             }
-            catch (Exception ex) { return BadRequest(ex.Message); }
+            catch (Exception ex) { return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message)); }
         }
 
     }

@@ -19,12 +19,18 @@ namespace Qinshift.Movies.Services.Helper
         }
         public static Movie MapToMovie(CreateMovieDto movie)
         {
+            if (!Enum.TryParse(movie.Genre, out GenreEnum genreEnum)) 
+            {
+                throw new Exception("Please enter a valid genre. Action, Animation, Comedy, Crime, Drama, Fantasy, Historical, Romance, Horror, ScienceFiction, War");
+
+
+            }
             var result = new Movie()
             {
                 Title = movie.Title,
                 Plot = movie.Plot,
                 ReleaseDate = movie.ReleaseDate,
-                Genre = (GenreEnum)movie.Genre
+                Genre = genreEnum
             };
             return result;
         }

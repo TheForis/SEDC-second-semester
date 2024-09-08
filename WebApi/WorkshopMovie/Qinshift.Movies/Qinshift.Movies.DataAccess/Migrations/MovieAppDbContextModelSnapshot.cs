@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Qinshift.Movies.DataAccess;
 
@@ -12,10 +11,9 @@ using Qinshift.Movies.DataAccess;
 namespace Qinshift.Movies.DataAccess.Migrations
 {
     [DbContext(typeof(MovieAppDbContext))]
-    [Migration("20240902223238_initialize")]
-    partial class initialize
+    partial class MovieAppDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,6 +96,61 @@ namespace Qinshift.Movies.DataAccess.Migrations
                             Plot = "Harry is a wizard.",
                             ReleaseDate = new DateTime(2012, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Harry Potter"
+                        });
+                });
+
+            modelBuilder.Entity("Qinshift.Movies.DomainModels.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Admin",
+                            LastName = "Administrator",
+                            Password = "!#/)zW??C?JJ??",
+                            UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FirstName = "Boris",
+                            LastName = "Krstovski",
+                            Password = "?!o?g?W?&?jT??",
+                            UserName = "boris"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FirstName = "Test",
+                            LastName = "Testing",
+                            Password = "??G??????vh????",
+                            UserName = "test"
                         });
                 });
 #pragma warning restore 612, 618

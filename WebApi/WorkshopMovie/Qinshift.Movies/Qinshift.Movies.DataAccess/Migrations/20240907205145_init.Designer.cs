@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Qinshift.Movies.DataAccess;
 
@@ -11,9 +12,10 @@ using Qinshift.Movies.DataAccess;
 namespace Qinshift.Movies.DataAccess.Migrations
 {
     [DbContext(typeof(MovieAppDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240907205145_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,7 +135,7 @@ namespace Qinshift.Movies.DataAccess.Migrations
                             Id = 1,
                             FirstName = "Admin",
                             LastName = "Administrator",
-                            Password = "admin",
+                            Password = "!#/)zW??C?JJ??",
                             UserName = "admin"
                         },
                         new
@@ -141,7 +143,7 @@ namespace Qinshift.Movies.DataAccess.Migrations
                             Id = 2,
                             FirstName = "Boris",
                             LastName = "Krstovski",
-                            Password = "boris1234",
+                            Password = "?!o?g?W?&?jT??",
                             UserName = "boris"
                         },
                         new
@@ -149,7 +151,7 @@ namespace Qinshift.Movies.DataAccess.Migrations
                             Id = 3,
                             FirstName = "Test",
                             LastName = "Testing",
-                            Password = "test123",
+                            Password = "??G??????vh????",
                             UserName = "test"
                         });
                 });

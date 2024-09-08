@@ -1,11 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Qinshift.Movies.DomainModels;
-using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Qinshift.Movies.DataAccess
 {
     public static class PopulateDb
     {
+        public static string PasswordHash(string password)
+        {
+            MD5 md5CryptoService = MD5.Create();
+            byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+
+            byte[] hashBytes = md5CryptoService.ComputeHash(passwordBytes);
+
+            string hashedPassword = Encoding.ASCII.GetString(hashBytes);
+            return hashedPassword;
+
+        }
         public static void Seed(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Movie>()
@@ -71,15 +83,15 @@ namespace Qinshift.Movies.DataAccess
                         FirstName = "Admin",
                         LastName = "Administrator",
                         UserName = "admin",
-                        Password = "admin"
+                        Password = PasswordHash("admin")
                     },
-                    new User 
+                    new User
                     {
                         Id= 2,
                         FirstName = "Boris",
                         LastName = "Krstovski",
                         UserName = "boris",
-                        Password = "boris1234"
+                        Password = PasswordHash("boris1234")
                     },
                     new User
                     {
@@ -87,7 +99,7 @@ namespace Qinshift.Movies.DataAccess
                         FirstName = "Test",
                         LastName = "Testing",
                         UserName = "test",
-                        Password = "test123"
+                        Password = PasswordHash("test123")
                     }
                 });
         }
