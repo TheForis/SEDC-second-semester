@@ -31,7 +31,8 @@ namespace Qinshift.Movies.Services.Implementation
             {
                 return MovieMapper.MapToDto(movieResult);
             }
-            return null;
+            else { return null; }
+            
         }
 
         public List<MovieDto> GetMovieByGenre( string genre)

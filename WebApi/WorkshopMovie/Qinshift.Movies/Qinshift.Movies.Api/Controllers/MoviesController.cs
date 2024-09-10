@@ -132,7 +132,7 @@ namespace Qinshift.Movies.Api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, (ex.Message));
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
         [HttpGet("GetMoviesByGenreAndOrYear")]
